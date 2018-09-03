@@ -1,0 +1,23 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignaturePad", "SignaturePad\SignaturePad.csproj", "{B3F47CF8-5C14-49C1-BADC-18134D9B5DDE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhone = Release|iPhone
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+		Debug|iPhone = Debug|iPhone
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B3F47CF8-5C14-49C1-BADC-18134D9B5DDE}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{B3F47CF8-5C14-49C1-BADC-18134D9B5DDE}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{B3F47CF8-5C14-49C1-BADC-18134D9B5DDE}.Release|iPhone.ActiveCfg = Release|iPhone
+		{B3F47CF8-5C14-49C1-BADC-18134D9B5DDE}.Release|iPhone.Build.0 = Release|iPhone
+		{B3F47CF8-5C14-49C1-BADC-18134D9B5DDE}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{B3F47CF8-5C14-49C1-BADC-18134D9B5DDE}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{B3F47CF8-5C14-49C1-BADC-18134D9B5DDE}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{B3F47CF8-5C14-49C1-BADC-18134D9B5DDE}.Debug|iPhone.Build.0 = Debug|iPhone
+	EndGlobalSection
+EndGlobal
