@@ -38,13 +38,13 @@ namespace SignaturePad
             var previousLocation = touch.PreviousLocationInView(this);
             var location = touch.LocationInView(this);
 
-            color.SetStroke();
+            context.SetStrokeColor(color.CGColor);
             context.SetLineWidth(width);
             context.SetLineCap(CGLineCap.Round);
 
             context.MoveTo(previousLocation.X, previousLocation.Y);
             context.AddLineToPoint(location.X, location.Y);
-
+            context.StrokePath();
         }
 
         nfloat width = 6;
