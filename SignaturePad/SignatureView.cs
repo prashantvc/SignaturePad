@@ -3,6 +3,7 @@ using UIKit;
 using Foundation;
 using System.Linq;
 using CoreGraphics;
+using System.Collections.Generic;
 
 namespace SignaturePad
 {
@@ -27,18 +28,28 @@ namespace SignaturePad
             var context = UIGraphics.GetCurrentContext();
             this.Image?.Draw(Bounds);
 
-            DrawSignature(context, touch);
+            //DrawLine(context, touch);
+            //Console.WriteLine(evt?.GetCoalescedTouches(touch));
+
+            foreach (var t in evt?.GetCoalescedTouches(touch))
+            {
+                DrawLine(context, t);
+            }
+
 
             this.Image = UIGraphics.GetImageFromCurrentImageContext();
             UIGraphics.EndImageContext();
         }
 
-        void DrawSignature(CGContext context, UITouch touch)
+        void DrawLine(CGContext context, UITouch touch)
         {
             var previousLocation = touch.PreviousLocationInView(this);
             var location = touch.LocationInView(this);
 
             context.SetStrokeColor(color.CGColor);
+            if (touch.Force > 0)
+                width = touch.Force * force;
+
             context.SetLineWidth(width);
             context.SetLineCap(CGLineCap.Round);
 
@@ -49,5 +60,6 @@ namespace SignaturePad
 
         nfloat width = 6;
         readonly UIColor color = UIColor.Red;
+        nfloat force = 4.0f;
     }
 }
