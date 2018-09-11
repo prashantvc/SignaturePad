@@ -15,7 +15,28 @@ namespace SignaturePad
         {
             base.ViewDidLoad();
             // Perform any additional setup after loading the view, typically from a nib.
+
+            var clearButton = new UIBarButtonItem(UIBarButtonSystemItem.Refresh);
+            clearButton.Clicked += ClearButton_Clicked;
+            NavigationItem.RightBarButtonItem = clearButton;
+
+            var saveButton = new UIBarButtonItem(UIBarButtonSystemItem.Save);
+            saveButton.Clicked += SaveButton_Clicked;
+            NavigationItem.LeftBarButtonItem = saveButton;
         }
+
+        void SaveButton_Clicked(object sender, EventArgs e)
+        {
+
+            //signaturePad.Image.SaveToPhotosAlbum()
+        }
+
+
+        void ClearButton_Clicked(object sender, EventArgs e)
+        {
+            signaturePad.ClearPad();
+        }
+
 
         public override void DidReceiveMemoryWarning()
         {

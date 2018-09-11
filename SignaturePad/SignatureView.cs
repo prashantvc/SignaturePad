@@ -28,9 +28,6 @@ namespace SignaturePad
             var context = UIGraphics.GetCurrentContext();
             this.Image?.Draw(Bounds);
 
-            //DrawLine(context, touch);
-            //Console.WriteLine(evt?.GetCoalescedTouches(touch));
-
             foreach (var t in evt?.GetCoalescedTouches(touch))
             {
                 DrawLine(context, t);
@@ -39,6 +36,11 @@ namespace SignaturePad
 
             this.Image = UIGraphics.GetImageFromCurrentImageContext();
             UIGraphics.EndImageContext();
+        }
+
+        internal void ClearPad()
+        {
+            Image = null;
         }
 
         void DrawLine(CGContext context, UITouch touch)
