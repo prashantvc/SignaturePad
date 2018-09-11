@@ -49,8 +49,8 @@ namespace SignaturePad
             var location = touch.LocationInView(this);
 
             context.SetStrokeColor(color.CGColor);
-            if (touch.Force > 0)
-                width = touch.Force * force;
+
+            width = touch.Force > 0 ? touch.Force * force : force;
 
             context.SetLineWidth(width);
             context.SetLineCap(CGLineCap.Round);
@@ -60,8 +60,8 @@ namespace SignaturePad
             context.StrokePath();
         }
 
-        nfloat width = 6;
-        readonly UIColor color = UIColor.Red;
+        nfloat width = 4;
+        readonly UIColor color = UIColor.Blue;
         nfloat force = 4.0f;
     }
 }
